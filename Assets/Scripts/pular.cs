@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pular : MonoBehaviour {
 	public bool onGround;
@@ -26,9 +27,17 @@ public class pular : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter(Collision other) {
-		if (other.gameObject.CompareTag("Plane")) {
-			onGround = true;
+		if (other.gameObject.CompareTag("Plane")){
+			 rb.velocity = Vector3.zero; 
+			 transform.localPosition = new Vector3(0f, 2f, -48.8f);
+		
+
 		}
+	
+		if (other.gameObject.CompareTag("Solido")) {
+			onGround = true;
+		} 
+
 	}
 
 }
