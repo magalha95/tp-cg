@@ -10,33 +10,30 @@ public class pular : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody>();		
+		rb = GetComponent<Rigidbody>();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if(onGround) {
 			if(Input.GetButtonDown("Jump")) {
 				Vector3 movement = new Vector3(0f, 250.0f, 0f);
-		
+
 				rb.AddForce(movement * speed * Time.deltaTime);
 
 				onGround = false;
 			}
 		}
 	}
-	
+
 	void OnCollisionEnter(Collision other) {
 		if (other.gameObject.CompareTag("Plane")){
-			 rb.velocity = Vector3.zero; 
-			 transform.localPosition = new Vector3(0f, 2f, -48.8f);
-		
+			 rb.velocity = Vector3.zero;
+			 transform.localPosition = new Vector3(0f, 11.52f, -48.8f);
+
 
 		}
-	
-		if (other.gameObject.CompareTag("Solido")) {
-			onGround = true;
-		} 
+
 
 	}
 

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Plane
   - Solido
+  - Teleport
+  - Teleport1
   layers:
   - Default
   - TransparentFX
